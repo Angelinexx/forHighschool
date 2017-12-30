@@ -1,0 +1,21 @@
+<view class="app" hidden="{{page_hidden}}"><component-share pageQRCodeData="{{pageQRCodeData}}"></component-share>
+<template name="zcAlbum">
+  <view class="element album {{data.html_mode}}" style="{{data.style}}">
+    <view class="album-container background-ele clearfix" style="{{data.ul_style}} ">
+      <view wx:for="{{data.li}}"
+            class="{{item.li_class}}"
+            style="{{item.li_style}}"
+            wx:key=""
+            data-event-params="{{item.eventParams}}"
+            catchtap="{{item.eventHandler}}">
+        <image src="{{item.pic}}" style="{{item.img_style}}" mode="scaleToFill"></image>
+        <text class="title">{{item.title}}</text>
+      </view>
+    </view>
+  </view>
+</template>
+
+<view class="ele-container">
+  <template is="zcAlbum" data="{{data:album1}}"></template>
+</view>
+</view>
